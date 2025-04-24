@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ibn Fahim FX Trading Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stl.css">
+  <style>
+  
+  </style>
+</head>
+<body class="font-sans bg-gray-100">
+  <!-- Navigation -->
+  <header class="bg-blue-300 shadow p-4 flex justify-between items-center sticky top-0 z-50">
+    <h1 class="text-xl font-bold"><a href="#home"> Ibn Fahim<sup>FX</sup> Trading Academy</a></h1>
+    <nav class="space-x-4 hidden md:block">
+       <a href="#home" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="#courses" class="text-gray-700 hover:text-blue-600">Courses</a>
+      <a href="aboutus.html" class="text-gray-700 hover:text-blue-600">About Us</a>
+       <a href="#login" class="text-gray-700 hover:text-blue-600">Login</a>
+      <a href="#register" class="text-gray-700 hover:text-blue-600">Register</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center px-6">
+    <div>
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-pulse">Welcome to Ibn Fahim Forex Trading Academy</h1>
+      <p class="text-xl mb-6">Master Forex Trading with the Experts</p>
+      <button onclick="scrollToCourses()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animate-bounce">
+        Start Learning
+      </button>
+    </div>
+  </section>
+
+  <!-- Live Forex Feed -->
+  <section id="xau" class="bg- text-white py-4 ticker">
+    <div class="ticker-text text-lg">
+      EUR/USD: 1.1023 ▲ | GBP/USD: 1.3045 ▼ | USD/JPY: 134.56 ▲ | AUD/USD: 0.7423 ▼ | XAU/USD: 3452.98 ▼
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="h-12 bg-gradient-to-b from-black to-gray-100"></div>
+
+  <!-- Featured Courses -->
+  <section id="courses" class="py-16 bg-gray-100 text-center px-4 fade-in">
+    <h2 class="text-3xl font-bold mb-10">Featured Courses</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div id="car" class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-transform transform hover:-translate-y-2">
+        <h3 class="text-xl font-semibold mb-2">Beginner Forex Course</h3>
+        <p class="text-white-600">Start from scratch and learn the basics of forex trading.</p>
+        <a href="#login" class="text-blue-600 font-bold hover:underline">Enroll Now</a>
+      </div>
+      <div id="car1" class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-transform transform hover:-translate-y-2">
+        <h3 class="text-xl font-semibold mb-2">Technical Analysis</h3>
+        <p class="text-white-600">Learn how to analyze market trends and make data-driven trades.</p>
+        <a href="#login" class="text-blue-600 font-bold hover:underline">Enroll Now</a>
+      </div>
+      <div id="car2" class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition-transform transform hover:-translate-y-2">
+        <h3 class="text-xl font-semibold mb-2">Advanced Strategies</h3>
+        <p class="text-white-600">Master the techniques used by professional traders.</p>
+        <a href="#login" class="text-blue-600 font-bold hover:underline">Enroll Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="h-12 bg-gradient-to-b from-black to-white-100"></div>
+
+  <!-- Testimonials Carousel -->
+  <section class="py-16 bg-blue-300 text-center px-4 fade-in">
+    <h2 class="text-3xl font-bold mb-10">What Our Students Say</h2>
+    <div id="testimonial" class="text-xl text-gray-700 italic">“This academy changed my life!” – Aishat Aminu.</div>
+  </section>
+
+  <!-- Divider -->
+  <div class="h-12 bg-gradient-to-b from-black to-white-100"></div>
+
+  <!-- Login Section -->
+  <section id="login" class="py-16 bg-gray-200 text-center px-4 fade-in">
+    <h2 id="lol" class="text-3xl font-bold mb-6">Login</h2>
+    <form class="max-w-md mx-auto bg-white p-6 rounded shadow">
+      <input type="email" placeholder="Email" class="w-full mb-4 p-2 border rounded" required />
+      <input type="password" placeholder="Password" class="w-full mb-4 p-2 border rounded" required />
+      <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded w-full hover:bg-blue-700">Login</button>
+    </form>
+  </section>
+
+  <!-- Divider -->
+  <div class="h-12 bg-gradient-to-b from-black to-blue-400"></div>
+  <!-- Register Section -->
+  <section id="register" class="py-16 bg-white text-center px-4 fade-in">
+    <h2 id="lol" class="text-3xl font-bold mb-6">Register</h2>
+    <form class="max-w-md mx-auto bg-gray-100 p-6 rounded shadow">
+      <input type="text" placeholder="Full Name" class="w-full mb-4 p-2 border rounded" required />
+      <input type="email" placeholder="Email" class="w-full mb-4 p-2 border rounded" required />
+      <input type="password" placeholder="Password" class="w-full mb-4 p-2 border rounded" required />
+      <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded w-full hover:bg-green-700">Register</button>
+    </form>
+  </section>
+
+  <!-- Divider -->
+  <div class="h-12 bg-gradient-to-b from-black to-blue-400"></div>
+
+  <!-- Newsletter Signup -->
+  <section class="py-16 bg-blue-600 text-white text-center px-4 fade-in">
+    <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+    <p class="mb-6">Subscribe to our newsletter to receive updates and exclusive offers.</p>
+    <input type="email" placeholder="Enter your email" class="p-2 rounded text-black" />
+    <button class="bg-white text-blue-600 font-bold py-2 px-4 rounded ml-2 hover:bg-gray-100 transition">Subscribe</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-300 text-white text-center p-6">
+    <p>&copy; 2025 Ibn Fahim FX Trading Academy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll to course section
+    function scrollToCourses() {
+      document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Testimonial carousel
+    const testimonials = [
+      '“This academy changed my life!” – Aishat Aminu .',
+      '“The best trading mentorship I’ve ever had.” – Isah dalhatu isah.',
+      '“Highly recommended for serious traders.” – Sadiya I M .'
+    ];
+    let currentTestimonial = 0;
+    setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      document.getElementById('testimonial').textContent = testimonials[currentTestimonial];
+    }, 4000);
+
+    // Scroll-triggered fade-in animation
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    faders.forEach(fader => {
+      observer.observe(fader);
+    });
+  </script>
+  <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCjC4QIE03zErWZ-wT5ZPnDt_6bfkh2RFc",
+    authDomain: "ibn-fahim-fx-trading-academy.firebaseapp.com",
+    projectId: "ibn-fahim-fx-trading-academy",
+    storageBucket: "ibn-fahim-fx-trading-academy.firebasestorage.app",
+    messagingSenderId: "261517155819",
+    appId: "1:261517155819:web:11ed95a88e2087754fcdae",
+    measurementId: "G-2XVZW5FS79"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  // Login handler
+  document.querySelector('#login form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    auth.signInWithEmailAndPassword(email, password)
+      .then(userCredential => {
+        alert("Login successful!");
+         window.location.href = "sudashb.html";
+        // Optional: Redirect to dashboard.html
+        // window.location.href = "dashboard.html";
+      })
+      .catch(error => {
+        alert("Login failed: " + error.message);
+      });
+  });
+
+  // Handle Register
+  document.querySelector('#register form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const fullName = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(userCredential => {
+        const user = userCredential.user;
+        return user.updateProfile({ displayName: fullName });
+      })
+
+       // 🔐 Set session persistence
+      auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+        .then(() => {
+          return auth.signInWithEmailAndPassword(email, password);
+        })
+
+      .then(() => {
+        alert("Registration successful!");
+        window.location.href = "dashb.html";
+      })
+      .catch(error => {
+        alert("Registration failed: " + error.message);
+      });
+  });
+</script>
+
+</body>
+</html>

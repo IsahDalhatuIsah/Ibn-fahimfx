@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ibn Fahim FX - Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <div class="max-w-3xl mx-auto mt-20 text-center">
+    <h1 class="text-4xl font-bold mb-6">Welcome to your Dashboard</h1>
+    <p id="userEmail" class="mb-6 text-lg text-blue-600"></p>
+    <button onclick="logout()" class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700">Logout</button>
+  </div>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script>
+    // Firebase config (same as before)
+    const firebaseConfig = {
+      apiKey: "AIzaSyCjC4QIE03zErWZ-wT5ZPnDt_6bfkh2RFc",
+      authDomain: "ibn-fahim-fx-trading-academy.firebaseapp.com",
+      projectId: "ibn-fahim-fx-trading-academy",
+      storageBucket: "ibn-fahim-fx-trading-academy.firebasestorage.app",
+      messagingSenderId: "261517155819",
+      appId: "1:261517155819:web:11ed95a88e2087754fcdae",
+      measurementId: "G-2XVZW5FS79"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Auth check
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        document.getElementById('userEmail').textContent = `Welcome, ${user.displayName} (${user.email})`;
+      } else {
+        window.location.href = "bin.html"; // Redirect if not logged in
+      }
+    });
+
+    function logout() {
+      auth.signOut().then(() => {
+        window.location.href = "bin.html"; // Redirect to home
+      });
+    }
+  </script>
+</body>
+</html>

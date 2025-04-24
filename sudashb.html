@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard - Ibn Fahim FX</title>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    #cap {
+      background-image: url(cap.png);
+    }
+  </style>
+</head>
+<body id="cap" class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-blue-300 shadow p-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-white">🎓 Dashboard</h1>
+    <button id="logoutBtn" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Logout</button>
+  </header>
+
+  <!-- Welcome -->
+  <section class="text-center py-10 px-4">
+    <h2 class="text-3xl font-bold mb-2 text-white">Welcome back, <span id="userName">Trader</span> 👋</h2>
+    <p class="text-gray-600">Ready to continue your trading journey?</p>
+  </section>
+
+  <!-- Dashboard Grid -->
+  <section class="grid md:grid-cols-3 gap-6 px-4 pb-12">
+    <div class="bg-white p-6 rounded shadow hover:shadow-xl transition">
+      <h3 class="text-xl font-bold text-blue-600 mb-2">📘 My Courses</h3>
+      <p class="text-gray-700">View and resume your enrolled courses.</p>
+      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">Go to Courses</button>
+    </div>
+
+    <div class="bg-white p-6 rounded shadow hover:shadow-xl transition">
+      <h3 class="text-xl font-bold text-green-600 mb-2">💻 Join Live Class</h3>
+      <p class="text-gray-700">Access the live trading Zoom sessions.</p>
+      <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Join Now</button>
+    </div>
+
+    <div class="bg-white p-6 rounded shadow hover:shadow-xl transition">
+      <h3 class="text-xl font-bold text-yellow-600 mb-2">📄 Materials</h3>
+      <p class="text-gray-700">Download PDFs, videos, and resources.</p>
+      <button class="mt-4 bg-yellow-500 text-white px-4 py-2 rounded">View Resources</button>
+    </div>
+  </section>
+
+  <script>
+    // Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyCjC4QIE03zErWZ-wT5ZPnDt_6bfkh2RFc",
+      authDomain: "ibn-fahim-fx-trading-academy.firebaseapp.com",
+      projectId: "ibn-fahim-fx-trading-academy",
+      storageBucket: "ibn-fahim-fx-trading-academy.firebasestorage.app",
+      messagingSenderId: "261517155819",
+      appId: "1:261517155819:web:11ed95a88e2087754fcdae"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Check login state
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        document.getElementById('userName').textContent = user.displayName || user.email;
+      } else {
+        window.location.href = "bin.html"; // Redirect to home if not logged in
+      }
+    });
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      auth.signOut().then(() => {
+        window.location.href = "bin.html";
+      });
+    });
+  </script>
+</body>
+</html>
