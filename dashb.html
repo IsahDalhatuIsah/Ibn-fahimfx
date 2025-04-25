@@ -37,13 +37,13 @@
       if (user) {
         document.getElementById('userEmail').textContent = `Welcome, ${user.displayName} (${user.email})`;
       } else {
-        window.location.href = "bin.html"; // Redirect if not logged in
+        window.location.href = "index.html"; // Redirect if not logged in
       }
     });
 
     function logout() {
       auth.signOut().then(() => {
-        window.location.href = "bin.html"; // Redirect to home
+        window.location.href = "index.html"; // Redirect to home
       });
     }
   </script>
