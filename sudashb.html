@@ -68,14 +68,14 @@
       if (user) {
         document.getElementById('userName').textContent = user.displayName || user.email;
       } else {
-        window.location.href = "bin.html"; // Redirect to home if not logged in
+        window.location.href = "index.html"; // Redirect to home if not logged in
       }
     });
 
     // Logout
     document.getElementById('logoutBtn').addEventListener('click', () => {
       auth.signOut().then(() => {
-        window.location.href = "bin.html";
+        window.location.href = "index.html";
       });
     });
   </script>
